@@ -1,0 +1,16 @@
+Package: lolcatext
+Type: Package
+Title: Miscellaneous Useful Functions - External Dependencies
+Version: 1.0.0
+Date: 2021-09-13
+Author: Mike Burr
+Maintainer: Mike Burr <michael.burr@burrandsons.com>
+Description: Distribution fitting and other external package dependencies not included in lolcat. 
+License: MIT License
+Suggests: testthat
+RoxygenNote: 7.1.2
+Encoding: UTF-8
+LazyData: true
+Imports:
+    SuppDists,
+    fitdistrplus
