@@ -1,3 +1,11 @@
+#' Fit Distribution - Johnson SU  
+#' 
+#' Fit distribution, cumulative distribution, quantile, and random generation functions for a distribution. 
+#'
+#' @param x Vector - data to be fit
+#' @param probs Vector - quantiles to use for fitdistrplus (method=qme)
+#'
+#' @return A list with distribution cumulative distribution, quantile, and random generation functions and fit details. 
 dist.fit.johnson.su <- function(
     x,
     probs = c(0.25, 0.5, 0.75, 0.95)
