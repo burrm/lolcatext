@@ -1,7 +1,7 @@
 #' Create Distribution - Johnson SU  
 #' 
 #' Create distribution, cumulative distribution, quantile, and random generation functions for a distribution. 
-#' Use parameters from JohnsonFit function in SuppDists or specify parameters directly.
+#' Use parameters from JohnsonFit function in SuppDists, recommend.johnson in lolcat, or specify parameters directly. 
 #'
 #' @param parms parameters, likely from SuppDists JohnsonFit function
 #' @param gamma gamma parameter 
@@ -19,13 +19,39 @@ dist.create.johnson.su <- function(
               ,lambda = NA
               ,type   = "SU"
             )
-  ,gamma  = parms$gamma
-  ,delta  = parms$delta
-  ,xi     = parms$xi
-  ,lambda = parms$lambda
+  ,gamma  = NA
+  ,delta  = NA
+  ,xi     = NA
+  ,lambda = NA
   
 ) {
   
+  if (is.finite(gamma) & is.finite(delta) & is.finite(xi) & is.finite(lambda)) {
+
+  } else {
+
+    if (is.data.frame(parms)) {
+      #parms from lolcat
+      idx <- which(parms$transform == "su")[1]
+
+      if (length(idx) == 0) {
+        idx <- 1
+      }
+
+      gamma  <- parms$gamma[idx]
+      delta  <- parms$eta[idx]
+      xi     <- parms$epsilon[idx]
+      lambda <- parms$lambda[idx]
+      
+
+    } else if (is.list(parms)) {
+      #parms from JohnsonFit
+      gamma  <- parms$gamma
+      delta  <- parms$delta
+      xi     <- parms$xi
+      lambda <- parms$lambda
+    }
+  }
   #if (is.null(gamma) | is.na(gamma) | is.nan(gamma) | is.infinite(gamma)) {
   #  stop("gamma not provided")
   #}

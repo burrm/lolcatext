@@ -15,5 +15,6 @@ dist.fit.johnson.su(x, probs = c(0.25, 0.5, 0.75, 0.95))
 A list with distribution cumulative distribution, quantile, and random generation functions and fit details.
 }
 \description{
-Fit distribution, cumulative distribution, quantile, and random generation functions for a distribution.
+Fit distribution, cumulative distribution, quantile, and random generation functions for a distribution. 
+Warning: This function overwrites d.fn, p.fn, q.fn, and r.fn in global environment.
 }

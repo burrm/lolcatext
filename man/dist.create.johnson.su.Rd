@@ -6,10 +6,10 @@
 \usage{
 dist.create.johnson.su(
   parms = list(gamma = NA, delta = NA, xi = NA, lambda = NA, type = "SU"),
-  gamma = parms$gamma,
-  delta = parms$delta,
-  xi = parms$xi,
-  lambda = parms$lambda
+  gamma = NA,
+  delta = NA,
+  xi = NA,
+  lambda = NA
 )
 }
 \arguments{
@@ -28,5 +28,5 @@ A data frame with functions, distribution name, and parameters.
 }
 \description{
 Create distribution, cumulative distribution, quantile, and random generation functions for a distribution. 
-Use parameters from JohnsonFit function in SuppDists or specify parameters directly.
+Use parameters from JohnsonFit function in SuppDists, recommend.johnson in lolcat, or specify parameters directly.
 }

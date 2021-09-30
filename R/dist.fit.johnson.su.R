@@ -1,6 +1,7 @@
 #' Fit Distribution - Johnson SU  
 #' 
 #' Fit distribution, cumulative distribution, quantile, and random generation functions for a distribution. 
+#' Warning: This function overwrites d.fn, p.fn, q.fn, and r.fn in global environment.
 #'
 #' @param x Vector - data to be fit
 #' @param probs Vector - quantiles to use for fitdistrplus (method=qme)
